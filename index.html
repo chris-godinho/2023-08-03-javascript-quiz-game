@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JavaScript Quiz Game</title>
+  <link rel="stylesheet" href="./assets/styles/reset.css" />
+  <link rel="stylesheet" href="./assets/styles/style.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Add high scores "link" -->
+    <!-- Add timer -->
+  </header>
+
+  <main>
+    <!-- Make all these elements show up when necessary through JavaScript -->
+    <!-- Can I add the content from here for the "fixed" elements, like the title description/start button? -->
+    <!-- Does the order the elements are listed here matter? Am I getting "empty spaces" when I'm not using an element? -->
+
+    <section id="opening-screen">
+      <!-- Use this element for the main title -->
+      <h1 id="main-title"></h1>
+      <!-- Use this element for the instructions under the main title -->
+      <p id="instructions"></p>
+      <!-- Use this element for the "start quiz" button -->
+      <button id="start"></button>
+    </section>
+
+    <section id="quiz-interface-screen">
+      <!-- Use this element for each question -->
+      <h1 id="question"></h1>
+      <!-- Use this element for answer options -->
+      <button id="option-a"></button>
+      <button id="option-b"></button>
+      <button id="option-c"></button>
+      <button id="option-d"></button>
+      <!-- Use this element for "correct"/"wrong" feedback for previous question -->
+      <span id="feedback"></span>
+    </section>
+
+    <section id="final-screen">
+      <!-- Use this element for the "your score is" section -->
+      <h2 id="final-score"></h2>
+      <!-- Use these elements for the text box and button for entering high scores -->
+      <form id="initials" placeholder="Your initials here"></form>
+      <button id="confirm-initials"></button>
+    </section>
+
+    <section id="high-score-screen">
+      <!-- Use this element for "High Scores" title -->
+      <h1 id="high-score-title"></h1>
+      <!-- Use this element for the list of high scores (add items through JavaScript) -->
+      <ol id="high-score-list"></ol>
+    </section>
+
+  </main>
+  <script src="./assets/scripts/script.js"></script>
+</body>
+
+</html>

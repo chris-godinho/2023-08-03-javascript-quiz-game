@@ -1,0 +1,66 @@
+:root {
+  /* Setting application colour scheme */
+  --background-color: #E6E6EA;
+  --button-color: #F4B701;
+  --button-highlight-color: #FED766;
+  --main-font-color: #000000;
+  --wrong-font-color: #FE3434;
+  --correct-font-color: #2AB8CB;
+}
+
+/* Setting fonts and colours for main section */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--main-font-color);
+}
+
+/* TODO: Add all id elements so I can customize them */
+
+/* Setting all heading properties */
+h1 {
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+p {
+  font-size: 15px;
+}
+
+button {
+  /* TODO: Define colors (button and text), shading/other properties? */
+}
+
+button:hover {
+  /* TODO: Define new colors */
+}
+
+#opening-screen #main-title {
+  text-align: center;
+}
+
+#feedback {
+  /* TODO: Colors should be determined by previous question's answer - update every time */
+  font-size: 20px;
+}
+
+form {
+  /* TODO: Define properties */
+}
+
+ol {
+  font-size: 20px;
+}
+
+/* Setting media queries for different widths for responsiveness*/
+@media screen and (max-width: 985px) {
+}
+
+@media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 480px) {
+}
