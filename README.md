@@ -1,2 +1,31 @@
-# cbg-mod04-quiz-game
-A simple interactive quiz game application.
+# Module 4 Challenge - JavaScript Quiz Game
+
+## Description
+
+A simple, interactive quiz game on basic JavaScript knowledge.
+
+![A render of the finished page](/assets/images/readme_render.jpg)
+
+## Features
+
+   - Randomized question pool;
+   - Timer for quiz completion, which gets deducted from when a question is answered incorrectly;
+   - High scores board (using Local Storage).
+
+## Installation
+
+No installation is necessary for this application. A live page can be accessed at <https://kristbg.github.io/cbg-mod04-quiz-game/>.
+
+## How can I Contribute?
+
+This is a one-off project that's not being supported any longer. Feel free, however, to clone this repo (but make sure to credit the original creators).
+
+## Credits
+
+This application was created and implemented by Chris Godinho (<https://github.com/kristbg>).
+
+The question pool was taken from the W3Schools website (<https://www.w3schools.com/js/js_quiz.asp>), and as such all rights relating to those are reserved to them.
+
+## License
+
+This project is licensed under the [MIT](/LICENSE) License.
