@@ -14,7 +14,7 @@
     <span id="left-nav">high scores</span>
     <div id="timer">
       <span>time: </span>
-      <span id="timer-counter">60</span>
+      <span id="timer-counter"></span>
     </div>
   </header>
 
@@ -25,36 +25,32 @@
       <div id="start-screen">
         <h1 id="main-heading">Coding Quiz Challenge</h1>
         <p id="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-        <button id="start" type="button">Start Quiz</button>
+        <div id="start-button-container">
+          <button id="start" type="button">Start Quiz</button>
+        </div>
       </div>
       
       <div id="quiz-screen">
-        <h2 class="secondary-heading" id="question">Inside which HTML element do we put the JavaScript?</h2>
+        <h2 class="secondary-heading" id="question"></h2>
         <div id="button-box">
-          <button class="option" type="button">&lt;javascript&gt;</button>
-          <button class="option" type="button">&lt;js&gt;</button>
-          <button class="option" type="button">&lt;scripting&gt;</button>
-          <button class="option" type="button">&lt;script&gt;</button>
+          <button class="option" id="op-a" type="button"></button>
+          <button class="option" id="op-b" type="button"></button>
+          <button class="option" id="op-c" type="button"></button>
+          <button class="option" id="op-d" type="button"></button>
         </div>
-        <h2 id="feedback">Correct!</h2>
+        <h2 id="feedback"></h2>
       </div>
       
       <div id="final-score-screen">
-        <h2 class="secondary-heading" id="question">Game over! Your score is 25.</h2>
+        <h2 id="final-result" class="secondary-heading"></h2>
         <h2 id="final-score">Enter initials:</h2>
         <input id="initials" type="text" placeholder="Your initials here">
         <button id="confirm-initials" type="submit">Submit</button>
       </div>
 
-      <div id="high-score-screen" id="high-score-buttons">
-        <h2 class="secondary-heading" id="question">Top players:</h2>
-        <ol id="high-score-list">
-          <li>CBG (25)</li>
-          <li>SEM (25)</li>
-          <li>GBM (25)</li>
-          <li>HAM (25)</li>
-          <li>MON (25)</li>
-        </ol>
+      <div id="high-score-screen">
+        <h2 class="secondary-heading">Top players:</h2>
+        <ol id="high-score-list"></ol>
         <button id="go-back" type="button">Go back</button>
         <button id="clear-scores" type="button">Clear high scores</button>
       </div>
