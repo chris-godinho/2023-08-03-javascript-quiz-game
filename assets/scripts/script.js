@@ -1,6 +1,6 @@
 // Storing button elements into global variables
 var startButton = document.getElementById("start");
-var highScores = document.getElementById("left-nav");
+var highScoresBtn = document.getElementById("left-nav");
 var optionA = document.getElementById("op-a");
 var optionB = document.getElementById("op-b");
 var optionC = document.getElementById("op-c");
@@ -12,13 +12,16 @@ var clearHighScores = document.getElementById("clear-scores");
 // Declaring timer, score and initials variables globally
 var activeTimer;
 var currentScore = 0;
-var highScoreList = [];
-var storedHighScoreList = [];
+var highScores = [];
+var highInitials = [];
+var newScores = [];
+var newInitials = [];
 var enteredInitials;
-var newScore;
+var addedScore;
 var correctAnswer = 0;
 var currentQuestion = 0;
 
+// Declaring question text, options and correct answers
 var cQuestionPool = [
 ['Inside which HTML element do we put the JavaScript?', '&lt;script&gt;', '&lt;scripting&gt;', '&lt;js&gt;', '&lt;javascript&gt;', 1],
 ['What is the correct JavaScript syntax to change the content of the HTML element &lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;?', 'document.getElementByName("p").innerHTML = "Hello World!";', 'document.getElement("p").innerHTML = "Hello World!";', 'document.getElementById("demo").innerHTML = "Hello World!";', '#demo.innerHTML = "Hello World!";', 3],
@@ -50,6 +53,7 @@ var finalEl = document.getElementById("final-score-screen");
 var scoreEl = document.getElementById("high-score-screen");
 var timerEl = document.getElementById("timer");
 
+// Displays the main screen
 function displayStart() {
   quizEl.style.display = "none";
   timerEl.style.display = "none";
@@ -59,6 +63,7 @@ function displayStart() {
   startEl.style.display = "block";
 }
 
+// Displays the quiz interface
 function displayQuiz() {
   startEl.style.display = "none";
   finalEl.style.display = "none";
@@ -68,6 +73,7 @@ function displayQuiz() {
   timerEl.style.display = "block";
 }
 
+// Displays the "Game Over" screen
 function displayFinalScore() {
   document.getElementById("final-result").innerHTML = "Game over! Your score is " + currentScore + ".";
   startEl.style.display = "none";
@@ -77,25 +83,61 @@ function displayFinalScore() {
   finalEl.style.display = "block";
 }
 
+// Saves initials and scores to Local Storage and adds the data into the HTML element
 function saveInitials() {
   enteredInitials = document.getElementById("initials").value;
   if (enteredInitials === "") {
-    alert("Field cannot be blank!\nSurely your name contains initials?");
+    alert("Field cannot be blank!\n\nSurely your name contains initials?");
   } else {
-    highScoreList.push(enteredInitials + " (" + currentScore + ")");
-    localStorage.setItem("highscores", highScoreList);
-    storedHighScoreList = localStorage.getItem("highscores").split(",");
-    document.getElementById("high-score-list").innerHTML = "";
-    for (i = 0; i < storedHighScoreList.length; i++) {
-      newScore = document.createElement("li");
-      newScore.innerHTML = storedHighScoreList[i];
-    document.getElementById("high-score-list").appendChild(newScore);
+    newScores = [];
+    newInitials = [];
+    highScores = [];
+    highInitials = [];
+    // Get current Local Storage saved lists (do I need to check if it's there?)
+    // Parse them into arrays
+    if (localStorage.hasOwnProperty("highscores")) {
+      highScores = localStorage.getItem("highscores").split(",");
+      for (i = 0; i < highScores.length; i++) {
+        highScores[i] = Number(highScores[i]);
+      }
+      highInitials = localStorage.getItem("highinitials").split(",");
     }
+
+    // Get entered information and add it to the array
+    highScores.push(currentScore);
+    highInitials.push(enteredInitials);
+
+    // Sort the list
+    for (i = 10; i > 0; i--) {
+      for (j = 0; j < highScores.length; j++) {
+        if (highScores[j] === i) {
+          newScores.push(highScores[j]);
+          newInitials.push(highInitials[j]);
+        }
+      }
+    }
+
+    // Add list items into HTML element
+    document.getElementById("high-score-list").innerHTML = "";
+    for (i = 0; i < newScores.length; i++) {
+      addedScore = document.createElement("li");
+      addedScore.innerHTML = newInitials[i] + " (" + newScores[i] + ")";
+    document.getElementById("high-score-list").appendChild(addedScore);
+
+    // Store current version of the array into Local Storage
+    localStorage.setItem("highscores", newScores);
+    localStorage.setItem("highinitials", newInitials);
+
+    // Move on to High Scores screen
     displayHighScores();
+
+    // Clear input form
     document.getElementById("initials").value = "";
+    }
   }
 }
 
+// Displays the High Scores board
 function displayHighScores() {
   clearInterval(activeTimer);
   startEl.style.display = "none";
@@ -106,12 +148,15 @@ function displayHighScores() {
   scoreEl.style.display = "block";
 }
 
+// Clears Local Storage
 function clearStorage() {
-  highScoreList = [];
+  highScores = [];
+  highInitials = [];
   document.getElementById("high-score-list").innerHTML = "";
   localStorage.clear();
 }
 
+// Decreases the time by one second
 function decreaseTimer() {
   document.getElementById("timer-counter").innerHTML--;
   if (document.getElementById("timer-counter").innerHTML <= 0) {
@@ -120,6 +165,7 @@ function decreaseTimer() {
   }
 }
 
+// Adds feedback about the previous question to the bottom of the screen
 function displayFeedback() {
   if (correctAnswer) {
     document.getElementById("feedback").innerHTML = "Correct!";
@@ -131,6 +177,7 @@ function displayFeedback() {
   document.getElementById("feedback").style.display = "block";
 }
 
+// Checks if answers are correct
 function selectOptionA() {
   if (nextQuestion[0][5] === 1) {
     correctAnswer = true;
@@ -183,8 +230,8 @@ function selectOptionD() {
   getNextQuestion();
 }
 
+// Pulls another question from the remaining pool
 function getNextQuestion() {
-  console.log(questionPool);
   if (currentQuestion > 0) {
     displayFeedback();
     if (currentQuestion >= 10) {
@@ -202,6 +249,7 @@ function getNextQuestion() {
   currentQuestion++;
   }
 
+// Starts up the timer, clears past scores and resets the question pool
 function startGame() {
   currentScore = 0;
   currentQuestion = 0;
@@ -214,7 +262,7 @@ function startGame() {
 
 // Adding event listeners to buttons
 startButton.addEventListener("click", startGame);
-highScores.addEventListener("click", displayHighScores);
+highScoresBtn.addEventListener("click", displayHighScores);
 confirmInitials.addEventListener("click", saveInitials);
 goBack.addEventListener("click", displayStart);
 clearHighScores.addEventListener("click", clearStorage);

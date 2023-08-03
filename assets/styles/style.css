@@ -17,6 +17,7 @@ body {
   color: var(--main-font-color);
 }
 
+/* Setting properties for the header elements */
 header {
   display: flex;
   justify-content: space-between;
@@ -60,6 +61,7 @@ p {
   line-height: 1.5em;
 }
 
+/* Aligning specific buttons */
 #start-button-container {
   display: flex;
   justify-content: center;
@@ -71,6 +73,7 @@ p {
   flex-direction: column;
 }
 
+/* Setting general button properties */
 button {
   background-color: var(--button-color);
   border: none;
@@ -94,6 +97,7 @@ button:hover {
   margin-left: 10px;
 }
 
+/* Sets properties and hides quiz interface/game over screen/high scores board at the start of the game */
 #quiz-screen {
   display: none;
 }
@@ -158,11 +162,30 @@ button:hover {
 }
 
 /* Setting media queries for different widths for responsiveness*/
-@media screen and (max-width: 985px) {
-}
-
-@media screen and (max-width: 700px) {
-}
-
 @media screen and (max-width: 480px) {
+  .secondary-heading {
+    padding: 50px 0px 50px 0px;
+  }
+
+  #final-score-screen span {
+    flex-direction: column;
+  }
+
+  #final-result {
+    text-align: center;
+  }
+
+  #final-score {
+    margin: 35px 0px 0px 0px;
+    align-self: center;
+  }
+
+  #initials {
+    width: 80%;
+    margin: 40px 0px 40px 0px;
+  }
+
+  #confirm-initials {
+    align-self: center;
+  }
 }
