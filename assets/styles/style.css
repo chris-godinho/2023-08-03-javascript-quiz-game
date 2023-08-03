@@ -35,8 +35,6 @@ header #timer {
   display: none;
 }
 
-/* TODO: Add all id elements so I can customize them */
-
 #quiz-interface-screen {
   width: 45%;
   margin: auto;
@@ -109,8 +107,11 @@ button:hover {
 }
 
 #final-score-screen {
-  /* This needs to be changed to flex when displayed */
   display: none;
+}
+
+#final-score-screen span {
+  display: flex;
 }
 
 #final-score {
@@ -121,7 +122,6 @@ button:hover {
 }
 
 #initials {
-  /* TODO: Define properties */
   height: 25px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 20px;
