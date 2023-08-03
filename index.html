@@ -11,49 +11,54 @@
 
 <body>
   <header>
-    <!-- Add high scores "link" -->
-    <!-- Add timer -->
+    <span id="left-nav">high scores</span>
+    <div id="timer">
+      <span>time: </span>
+      <span id="timer-counter">60</span>
+    </div>
   </header>
 
   <main>
-    <!-- Make all these elements show up when necessary through JavaScript -->
-    <!-- Can I add the content from here for the "fixed" elements, like the title description/start button? -->
-    <!-- Does the order the elements are listed here matter? Am I getting "empty spaces" when I'm not using an element? -->
-
-    <section id="opening-screen">
-      <!-- Use this element for the main title -->
-      <h1 id="main-title"></h1>
-      <!-- Use this element for the instructions under the main title -->
-      <p id="instructions"></p>
-      <!-- Use this element for the "start quiz" button -->
-      <button id="start"></button>
-    </section>
 
     <section id="quiz-interface-screen">
-      <!-- Use this element for each question -->
-      <h1 id="question"></h1>
-      <!-- Use this element for answer options -->
-      <button id="option-a"></button>
-      <button id="option-b"></button>
-      <button id="option-c"></button>
-      <button id="option-d"></button>
-      <!-- Use this element for "correct"/"wrong" feedback for previous question -->
-      <span id="feedback"></span>
-    </section>
+      
+      <div id="start-screen">
+        <h1 id="main-heading">Coding Quiz Challenge</h1>
+        <p id="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+        <button id="start" type="button">Start Quiz</button>
+      </div>
+      
+      <div id="quiz-screen">
+        <h2 class="secondary-heading" id="question">Inside which HTML element do we put the JavaScript?</h2>
+        <div id="button-box">
+          <button class="option" type="button">&lt;javascript&gt;</button>
+          <button class="option" type="button">&lt;js&gt;</button>
+          <button class="option" type="button">&lt;scripting&gt;</button>
+          <button class="option" type="button">&lt;script&gt;</button>
+        </div>
+        <h2 id="feedback">Correct!</h2>
+      </div>
+      
+      <div id="final-score-screen">
+        <h2 class="secondary-heading" id="question">Game over! Your score is 25.</h2>
+        <h2 id="final-score">Enter initials:</h2>
+        <input id="initials" type="text" placeholder="Your initials here">
+        <button id="confirm-initials" type="submit">Submit</button>
+      </div>
 
-    <section id="final-screen">
-      <!-- Use this element for the "your score is" section -->
-      <h2 id="final-score"></h2>
-      <!-- Use these elements for the text box and button for entering high scores -->
-      <form id="initials" placeholder="Your initials here"></form>
-      <button id="confirm-initials"></button>
-    </section>
-
-    <section id="high-score-screen">
-      <!-- Use this element for "High Scores" title -->
-      <h1 id="high-score-title"></h1>
-      <!-- Use this element for the list of high scores (add items through JavaScript) -->
-      <ol id="high-score-list"></ol>
+      <div id="high-score-screen" id="high-score-buttons">
+        <h2 class="secondary-heading" id="question">Top players:</h2>
+        <ol id="high-score-list">
+          <li>CBG (25)</li>
+          <li>SEM (25)</li>
+          <li>GBM (25)</li>
+          <li>HAM (25)</li>
+          <li>MON (25)</li>
+        </ol>
+        <button id="go-back" type="button">Go back</button>
+        <button id="clear-scores" type="button">Clear high scores</button>
+      </div>
+      
     </section>
 
   </main>

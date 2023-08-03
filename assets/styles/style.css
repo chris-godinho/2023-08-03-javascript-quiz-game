@@ -6,20 +6,44 @@
   --main-font-color: #000000;
   --wrong-font-color: #FE3434;
   --correct-font-color: #2AB8CB;
+  --li-background-color1: #C2C2C2;
+  --li-background-color2: #ADADAD;
 }
 
 /* Setting fonts and colours for main section */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   color: var(--main-font-color);
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  font-variant: small-caps;
+  font-size: 25px;
+}
+
+header #timer {
+  float: right;
+  display: none;
+}
+
 /* TODO: Add all id elements so I can customize them */
+
+#quiz-interface-screen {
+  width: 45%;
+  margin: auto;
+}
 
 /* Setting all heading properties */
 h1 {
-  font-size: 55px;
+  font-size: 40px;
+  font-variant: small-caps;
+  font-weight: bold;
+  padding: 80px 0px 50px 0px;
+  text-align: center;
 }
 
 h2 {
@@ -28,31 +52,105 @@ h2 {
 
 p {
   font-size: 15px;
+  text-align: center;
+  padding-bottom: 25px;
+  line-height: 1.5em;
+}
+
+#button-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 button {
-  /* TODO: Define colors (button and text), shading/other properties? */
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  margin: 10px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  align-self: start;
 }
 
 button:hover {
-  /* TODO: Define new colors */
+  background-color: var(--button-highlight-color);
+  cursor: pointer;
 }
 
-#opening-screen #main-title {
-  text-align: center;
+#start {
+  align-self: center;
+}
+
+.secondary-heading {
+  font-weight: bold;
+  padding: 80px 0px 50px 0px;
+  margin-left: 10px;
+}
+
+#quiz-screen {
+  display: none;
 }
 
 #feedback {
   /* TODO: Colors should be determined by previous question's answer - update every time */
-  font-size: 20px;
+  display: none;
+  margin-top: 25px;
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--correct-font-color);
 }
 
-form {
+#final-score-screen {
+  /* This needs to be changed to flex when displayed */
+  display: none;
+}
+
+#final-score {
+  font-weight: bold;
+  align-self: center;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+#initials {
   /* TODO: Define properties */
+  height: 25px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  align-self: center;
 }
 
-ol {
+#confirm-initials {
+  margin-left: 20px;
   font-size: 20px;
+  padding: 10px;
+}
+
+#high-score-screen {
+  display: none;
+}
+
+#high-score-list {
+  font-size: 25px;
+  margin-left: 15px;
+  margin-bottom: 45px;
+  width: 75%;
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+#high-score-list li {
+  line-height: 2.5em;
+  padding-left: 10px;
+  background-color: var(--li-background-color1);
+}
+
+#high-score-list li:nth-child(odd) {
+  background-color: var(--li-background-color2);
 }
 
 /* Setting media queries for different widths for responsiveness*/
