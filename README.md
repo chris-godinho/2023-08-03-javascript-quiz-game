@@ -26,7 +26,7 @@ This application was created and implemented by Chris Godinho (<https://github.c
 
 A large part of the research for this project was done through the websites W3 Schools (<https://www.w3schools.com/>) and MDN Web Docs (<https://developer.mozilla.org/en-US/docs/Web>), and as such small sections of code were adapted from examples offered in those sites.
 
-The question pool was taken from the W3Schools website (<https://www.w3schools.com/js/js_quiz.asp>), and as such all rights relating to those are reserved to them.
+The question pool was adapted from a quiz at the W3Schools website (<https://www.w3schools.com/js/js_quiz.asp>), and as such all rights relating to those are reserved to them.
 
 ## License
 

@@ -108,7 +108,7 @@ function saveInitials() {
     highInitials.push(enteredInitials);
 
     // Sort the list
-    for (i = 10; i > 0; i--) {
+    for (i = 10; i >= 0; i--) {
       for (j = 0; j < highScores.length; j++) {
         if (highScores[j] === i) {
           newScores.push(highScores[j]);
