@@ -188,4 +188,8 @@ button:hover {
   #confirm-initials {
     align-self: center;
   }
+
+  #high-score-list li {
+    font-size: 15px;
+  }
 }
