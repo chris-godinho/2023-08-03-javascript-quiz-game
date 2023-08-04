@@ -163,8 +163,23 @@ button:hover {
 
 /* Setting media queries for different widths for responsiveness*/
 @media screen and (max-width: 480px) {
+  #quiz-interface-screen {
+    width: 75%;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 30px;
+    padding: 35px 0px 35px 0px;
+  }
+
+  button {
+    font-size: 15px;
+    color: black;
+  }
+
   .secondary-heading {
-    padding: 50px 0px 50px 0px;
+    padding: 25px 0px 25px 0px;
   }
 
   #final-score-screen span {
