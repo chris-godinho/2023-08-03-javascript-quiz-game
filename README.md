@@ -1,4 +1,4 @@
-# Module 4 Challenge - JavaScript Quiz Game
+# JavaScript Quiz Game
 
 ## Description
 
