@@ -14,7 +14,7 @@ A simple, interactive quiz game on basic JavaScript knowledge.
 
 ## Installation
 
-No installation is necessary for this application. A live page can be accessed at <https://kristbg.github.io/cbg-mod04-quiz-game/>.
+No installation is necessary for this application. A live page can be accessed at <https://kristbg.github.io/2023-08-03-javascript-quiz-game/>.
 
 ## How can I Contribute?
 
